@@ -1,6 +1,8 @@
 // Dashboard.tsx
 import React from "react";
 import { DashboardProps } from "./interfaces";
+import { Typography } from "@mui/material";
+import { Paper } from "@mui/material";
 import EnergySummary from "./EnergySummary";
 import PanelGrid from "./PanelGrid";
 import PanelSummary from "./PanelSummary";
@@ -56,10 +58,21 @@ const Dashboard: React.FC<DashboardProps> = ({ panels }) => {
         </div>
       </div>
       {/* Panel Monitoring Card */}
-      <div className="bg-white p-4 mt-4 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-md">
-        <h2 className="text-[20px] font-semibold mb-4">Panel Monitoring</h2>
+      <Paper
+        sx={{
+          mt: 2,
+          px: 3,
+          py: 1,
+        }}
+      >
+        <Typography
+          variant="h6"
+          sx={{ mb: 1, fontWeight: "600", fontSize: "20px" }}
+        >
+          Panel Monitoring
+        </Typography>
         <PanelGrid panels={panels} />
-      </div>
+      </Paper>
     </div>
   );
 };
