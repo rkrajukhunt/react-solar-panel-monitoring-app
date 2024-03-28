@@ -41,13 +41,13 @@ This project is a web-based dashboard for monitoring energy production of a sola
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone [<repository-url>](https://github.com/rkrajukhunt/react-solar-panel-monitoring-app)
 ```
 
 2. Install dependencies:
 
 ```bash
-cd solar-farm-dashboard
+cd react-solar-panel-monitoring-app
 npm install
 ```
 
