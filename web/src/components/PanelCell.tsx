@@ -9,6 +9,7 @@ import { Chip } from "@mui/material";
 import { Divider } from "@mui/material";
 
 import { FiSun } from "react-icons/fi";
+import PanelSvg from "../assets/panel.svg";
 import WeakSvg from "../assets/weak.svg";
 
 const PanelCell: React.FC<PanelCellProps> = ({ panel }) => {
@@ -105,7 +106,7 @@ const PanelCell: React.FC<PanelCellProps> = ({ panel }) => {
             {isWeak ? (
               <img src={WeakSvg} loading="lazy" className="mr-2 w-9" />
             ) : (
-              <img src={WeakSvg} loading="lazy" className="mr-2 w-9" />
+              <img src={PanelSvg} loading="lazy" className="mr-2 w-9" />
             )}
           </Box>
         </Grid>
