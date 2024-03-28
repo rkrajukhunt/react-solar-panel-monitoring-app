@@ -10,14 +10,16 @@ const PanelCell: React.FC<PanelCellProps> = ({ panel }) => {
 
   return (
     <div className="border border-gray-300 rounded-lg ">
-      <div className="flex justify-between p-[7px] border-b border-gray-300  items-center">
-        <div className="flex items-center gap-2 ">
+      <div
+        className={`flex justify-between p-[7px] border-b border-gray-300  items-center `}
+      >
+        <div className="flex items-center gap-2">
           <FiSun />
           <p className="text-[13px] font-medium">Panel #{panel.id}</p>
         </div>
         <span
           className={`px-4 py-[2px] ${
-            isWeak ? "bg-red-200" : "bg-green-200"
+            isWeak ? "bg-red-300" : "bg-green-300"
           }  rounded-full flex justify-center items-center text-[11px]`}
         >
           {isWeak ? "Weak" : "Healthy"}
@@ -27,17 +29,16 @@ const PanelCell: React.FC<PanelCellProps> = ({ panel }) => {
         <div>
           <p className="text-[12px]">
             <span>Voltage &nbsp;: </span>
-            <span className="ml-2 font-medium">{panel.voltage}v</span>
+            <span className="ml-2 font-semibold">{panel.voltage}v</span>
           </p>
           <p className="text-[12px]">
             <span>Wattage : </span>
-            <span className="ml-1 font-medium">{panel.wattage}w</span>
+            <span className="ml-1 font-semibold">{panel.wattage}w</span>
           </p>
         </div>
         <div className="pr-3">
           <img
             src={isWeak ? WeakSvg : PanelSvg}
-            alt=""
             className="w-[32px] h-[32px]"
           />
         </div>

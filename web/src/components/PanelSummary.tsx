@@ -53,7 +53,7 @@ const PanelSummary: React.FC<PanelSummaryProps> = ({
           </div>
         </div>
 
-        <div className=" flex items-center justify-center">
+        <div className="flex items-center justify-center lg:block hidden">
           <img src={EnergyOverview} alt="" className="h-[260px] w-[230px]" />
         </div>
       </div>
