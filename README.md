@@ -48,13 +48,13 @@ git clone [<repository-url>](https://github.com/rkrajukhunt/react-solar-panel-mo
 
 ```bash
 cd react-solar-panel-monitoring-app
-npm install
+pnpm install
 ```
 
 3. Start the development server:
 
 ```bash
-npm start
+pnpm run dev
 ```
 
 4. Open the browser and navigate to `http://localhost:3000` to view the dashboard.
@@ -72,5 +72,5 @@ npm start
 - To run tests, use the following command:
 
 ```bash
-npm test
+pnpm test
 ```
