@@ -12,10 +12,13 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:9000");
+        const endpoint =
+          process?.env.REACT_APP_API_ENDPOINT || "http://localhost:9000";
+        const response = await axios.get(endpoint);
         setPanels(response.data);
         setError(null);
       } catch (error) {
+        console.error(error);
         setError("Failed to fetch data from the server. Retrying...");
       }
     };
