@@ -1,6 +1,9 @@
 // PanelSummary.tsx
 import React from "react";
+import { Typography, Paper, Grid } from "@mui/material";
+import { Box } from "@mui/material";
 import { PanelSummaryProps } from "./interfaces";
+
 import HealthyPanel from "../assets/healthy-panel.svg";
 import WeakPanel from "../assets/weak-panel.svg";
 import Energy from "../assets/solar-panel-solar-energy.svg";
@@ -11,53 +14,105 @@ const PanelSummary: React.FC<PanelSummaryProps> = ({
   weakCount,
 }) => {
   return (
-    <div className="bg-white pl-8 py-3 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-md">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div>
-          <h1 className="text-2xl font-medium mb-4">Panel Overview</h1>
-
-          <div className="flex items-center mb-4">
-            <img src={HealthyPanel} alt="" className="h-12 w-12 " />
-            <div className="ml-4">
-              <p className="text-base lg:text-base xl:text-xl font-normal">
+    <Paper
+      sx={{
+        px: 3,
+        py: 1,
+      }}
+    >
+      <Typography
+        variant="h6"
+        sx={{ mb: 2, fontWeight: "600", fontSize: "20px" }}
+      >
+        Panel Overview
+      </Typography>
+      <Grid container spacing={2} rowSpacing={1}>
+        <Grid item xs={7} container rowSpacing={1}>
+          <Grid item xs={12}>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <img
+                src={HealthyPanel}
+                loading="lazy"
+                className="mr-3 w-[34px]"
+              />
+              <Typography
+                variant="h5"
+                sx={{
+                  fontWeight: "400",
+                  display: "flex",
+                  flexDirection: "column",
+                  fontSize: "20px",
+                }}
+              >
                 Healthy Panels
-              </p>
-              <p className="text-base lg:text-base xl:text-xl font-semibold">
-                {healthyCount}{" "}
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center mb-4">
-            <img src={WeakPanel} alt="" className="h-12 w-12 " />
-            <div className="ml-4">
-              <p className="text-base lg:text-base xl:text-xl font-normal">
+                <Typography
+                  variant="subtitle1"
+                  sx={{ fontWeight: "600", fontSize: "18px" }}
+                >
+                  {healthyCount}
+                </Typography>
+              </Typography>
+            </Box>
+          </Grid>
+          <Grid item xs={12}>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <img src={WeakPanel} loading="lazy" className="mr-[4px]" />
+              <Typography
+                variant="h5"
+                sx={{
+                  fontWeight: "400",
+                  display: "flex",
+                  flexDirection: "column",
+                  fontSize: "20px",
+                }}
+              >
                 Weak Panels
-              </p>
-              <p className="text-base lg:text-base xl:text-xl font-semibold">
-                {weakCount}{" "}
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center">
-            <img src={Energy} alt="" className="h-12 w-12 " />
-            <div className="ml-4">
-              <p className="text-base lg:text-base xl:text-xl font-normal">
+                <Typography
+                  variant="subtitle1"
+                  sx={{ fontWeight: "600", fontSize: "18px" }}
+                >
+                  {weakCount}
+                </Typography>
+              </Typography>
+            </Box>
+          </Grid>
+          <Grid item xs={12}>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <img src={Energy} loading="lazy" className="mr-3 w-[34px]" />
+              <Typography
+                variant="h5"
+                sx={{
+                  fontWeight: "400",
+                  display: "flex",
+                  flexDirection: "column",
+                  fontSize: "20px",
+                }}
+              >
                 Total Panels
-              </p>
-              <p className="text-base lg:text-base xl:text-xl font-semibold">
-                {healthyCount + weakCount}{" "}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex items-center justify-center lg:block hidden">
-          <img src={EnergyOverview} alt="" className="h-[260px] w-[230px]" />
-        </div>
-      </div>
-    </div>
+                <Typography
+                  variant="subtitle1"
+                  sx={{ fontWeight: "600", fontSize: "18px" }}
+                >
+                  {healthyCount - weakCount}
+                </Typography>
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
+        <Grid
+          item
+          xs={5}
+          container
+          rowSpacing={2}
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Grid item xs={12}>
+            <img src={EnergyOverview} loading="lazy" className="mx-5 -mt-10" />
+          </Grid>
+        </Grid>
+      </Grid>
+    </Paper>
   );
 };
 
