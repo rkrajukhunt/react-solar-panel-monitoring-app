@@ -32,7 +32,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       {error ? (
         <div className="solar-container bg-red-200 p-4 m-4 shadow-[0_8px_30px_rgb(0,0,0,0.06)] rounded-md">
           {error}
