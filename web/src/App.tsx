@@ -12,9 +12,8 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const endpoint =
-          process?.env.REACT_APP_API_ENDPOINT || "http://localhost:9000";
-        const response = await axios.get(endpoint);
+        const BASE_API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT as string;
+        const response = await axios.get(BASE_API_ENDPOINT);
         setPanels(response.data);
         setError(null);
       } catch (error) {
